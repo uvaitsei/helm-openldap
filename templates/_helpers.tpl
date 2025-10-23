@@ -128,10 +128,10 @@ Generate olcSyncRepl list
     olcSyncrepl:
       rid=10{{ $index1 }}
       provider=ldap://{{ $name }}-{{ $index0 }}.{{ $name }}-headless.{{ $namespace }}.svc.{{ $cluster }}:1389
-      binddn={{ printf "cn=%s,%s" $bindDNUser $domain }}
+      binddn="{{ printf "cn=%s,%s" $bindDNUser $domain }}"
       bindmethod=simple
       credentials={{ $adminPassword }}
-      searchbase={{ $domain }}
+      searchbase="{{ $domain }}"
       type=refreshAndPersist
       interval={{ $interval }}
       network-timeout=0
